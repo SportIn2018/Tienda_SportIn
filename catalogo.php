@@ -27,7 +27,7 @@ $q_talla = ("SELECT id_talla,talla_descripcion FROM c_tallas");
 //Si hay peticion de categorias utilizar la query correspondiente (Queries para contar los productos y determinar la cantidad de paginas para ordenarlos)
 if ($_GET['buscar']){
 	$busq = filter_var($_GET['buscar'], FILTER_SANITIZE_STRING);
-    $q_catal = ("SELECT DISTINCT p.id_producto FROM productos p,c_categorias c,c_marcas m WHERE p.id_categoria=c.id_categoria AND p.id_marca = m.id_marca AND prod_nombre ILIKE '%$busq%' OR c.categ_descripcion ILIKE '%$_GET[buscar]%' OR m.marca_descripcion ILIKE '%$_GET[buscar]%'");
+    $q_catal = ("SELECT DISTINCT p.id_producto FROM productos p,c_categorias c,c_marcas m WHERE p.id_categoria=c.id_categoria AND p.id_marca = m.id_marca AND prod_nombre ILIKE '%$busq%' OR c.categ_descripcion ILIKE '%$busq%' OR m.marca_descripcion ILIKE '%$busq%'");
     $filtro_tipo = 'Busqueda';
     $filtro_nom = $_GET['buscar'];
     $filtro_ok = 1;
