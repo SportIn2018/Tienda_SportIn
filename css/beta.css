@@ -1,0 +1,8 @@
+html, body{
+	height: 100%;
+}
+
+.barra_fix {
+	min-height: 100%;
+	overflow: hidden;
+}
